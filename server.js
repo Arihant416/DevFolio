@@ -5,6 +5,7 @@ const express = require('express'),
 const connectDB = require('./config/db');
 //Connecting to Atlas
 connectDB();
+app.use(express.json({ extended: true }));
 app.get('/', (req, res) => {
 	res.send('Hi');
 });
