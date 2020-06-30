@@ -333,12 +333,18 @@ button {
 /* Landing Page */
 .landing {
 	position: relative;
-	background: url('./img/showcase.jpg') no-repeat center center/cover;
+	background: url('./img/nasa.jpg') no-repeat center center/cover;
 	height: 100vh;
 }
-
+.landing-inner .pa {
+	margin-top: 100px;
+	color: burlywood;
+}
+.landing-inner .pa .red {
+	color: red;
+}
 .landing-inner {
-	color: #fff;
+	color: burlywood;
 	height: 100%;
 	width: 80%;
 	margin: auto;
