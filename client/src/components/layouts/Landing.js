@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Landing = () => {
 	return (
 		<section className='landing'>
@@ -11,16 +11,20 @@ const Landing = () => {
 						developers.
 					</p>
 					<div className='buttons'>
-						<a href='register.html' className='btn btn-primary'>
+						<Link to='/register' className='btn btn-primary'>
 							Sign Up
-						</a>
-						<a href='login.html' className='btn btn-light'>
+						</Link>
+						<Link to='/login' className='btn btn-light'>
 							Login
-						</a>
+						</Link>
 					</div>
 					<p className='text-muted pa'>
 						Copyright ©
-						<a href='https://www.github.com/Arihant416' target='_blank'>
+						<a
+							href='https://www.github.com/Arihant416'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
 							{` `} Arihant
 						</a>{' '}
 						2020 <span className='red'>❤</span>

@@ -339,13 +339,13 @@ button {
 }
 .landing-inner .pa {
 	margin-top: 100px;
-	color: burlywood;
+	color: grey;
 }
 .landing-inner .pa .red {
 	color: red;
 }
 .landing-inner {
-	color: burlywood;
+	color: rgb(135, 197, 222);
 	height: 100%;
 	width: 80%;
 	margin: auto;
