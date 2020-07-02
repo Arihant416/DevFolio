@@ -17,8 +17,8 @@ router.post(
 		check('name', 'Oh Come on? No name!!!').not().isEmpty(),
 		check('email', 'Please add valid Email').isEmail(),
 		check('password', 'Please enter a password with 6 or more chars').isLength({
-			min: 6
-		})
+			min: 6,
+		}),
 	],
 	async (req, res) => {
 		const errors = validationResult(req);
@@ -32,7 +32,7 @@ router.post(
 			let user = await User.findOne({ email });
 			if (user) {
 				return res.status(400).json({
-					errors: [{ message: 'User already exists' }]
+					errors: [{ msg: 'User already exists' }],
 				});
 			}
 
@@ -42,7 +42,7 @@ router.post(
 				gravatar.url(email, {
 					s: '200',
 					r: 'pg',
-					d: 'mm'
+					d: 'mm',
 				}),
 				{ forceHttps: true }
 			);
@@ -51,7 +51,7 @@ router.post(
 				name,
 				email,
 				avatar,
-				password
+				password,
 			});
 
 			//Encrypt Password
@@ -61,8 +61,8 @@ router.post(
 			await user.save();
 			const payload = {
 				user: {
-					id: user.id
-				}
+					id: user.id,
+				},
 			};
 			jwt.sign(
 				payload,
