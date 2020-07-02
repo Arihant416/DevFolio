@@ -300,7 +300,7 @@ button {
 
 /* Navbar */
 .navbar {
-	background-color: black;
+	background-color: var(--dark-color);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -309,7 +309,7 @@ button {
 	z-index: 1;
 	width: 100%;
 	top: 0;
-	border-bottom: solid 0.1px var(--primary-color);
+	border-bottom: solid 0.1px ridge;
 	opacity: 0.9;
 }
 
@@ -334,18 +334,19 @@ button {
 /* Landing Page */
 .landing {
 	position: relative;
-	background: url('./img/nasa.jpg') no-repeat center center/cover;
+	background: url('https://images.unsplash.com/photo-1487875961445-47a00398c267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
+		no-repeat center center/cover;
 	height: 100vh;
 }
 .landing-inner .pa {
 	margin-top: 100px;
-	color: grey;
+	color: rgba(238, 231, 231, 0.877);
 }
 .landing-inner .pa .red {
 	color: red;
 }
 .landing-inner {
-	color: rgb(135, 197, 222);
+	color: #fff;
 	height: 100%;
 	width: 80%;
 	margin: auto;
