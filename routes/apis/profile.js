@@ -4,6 +4,7 @@ const auth = require('../../controller/authController');
 const { check, validationResult } = require('express-validator');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/postModel');
 const { remove } = require('../../models/Profile');
 const request = require('request');
 const config = require('config');
@@ -143,7 +144,8 @@ router.get('/user/:user_id', async (req, res) => {
 // @access Privated
 router.delete('/', auth, async (req, res) => {
 	try {
-		// @todo - remove users post
+		//Remove User's Post as well
+		await Post.deleteMany({ user: req.user.id });
 		//Remove Profile
 		await Profile.findOneAndRemove({ user: req.user.id });
 		//Remove the User
